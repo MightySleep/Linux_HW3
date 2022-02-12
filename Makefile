@@ -16,14 +16,14 @@ RM=/bin/rm -f
 
 approxe_: approxe clean
 approxe: approxe.c $(OBJS)
-  $(CC) $(CFLAGS) approxe.c prompt.c prompt.h display.c display.h compute.c compute.h -o approxe -I.
+	$(CC) $(CFLAGS) approxe.c prompt.c prompt.h display.c display.h compute.c compute.h -o approxe -I.
 prompt.o: prompt.c prompt.h
-  $(CC) $(CFLAGS) prompt.c prompt.h -o prompt.o -I. -c
+	$(CC) $(CFLAGS) prompt.c prompt.h -o prompt.o -I. -c
 display.o: display.c display.h
-  $(CC) $(CFLAGS) display.c display.h -o display.o -I. -c
+	$(CC) $(CFLAGS) display.c display.h -o display.o -I. -c
 compute.o: compute.c compute.h
-  $(CC) $(CFLAGS) compute.c compute.h -o compute.o -I. -c
+	$(CC) $(CFLAGS) compute.c compute.h -o compute.o -I. -c
 tidy:
-  $(RM) a.out core.*
+	$(RM) a.out core.*
 clean: tidy
-  $(RM) prompt.o display.o compute.o
+	$(RM) prompt.o display.o compute.o
